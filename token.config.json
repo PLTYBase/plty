@@ -8,7 +8,7 @@
   "totalSupply": 1000000000,
 
   "initialMetadataURI": "ipfs://REPLACE_AFTER_IPFS_UPLOAD",
-  "owner": "0xREPLACE_WITH_YOUR_DEPLOYER_ADDRESS",
+  "owner": "0xc5D7B3E0C2d87938C49bc7A8b73b21a06d63b368",
 
   "upgradeable": true,
   "ownerNotes": "owner = mint authority + upgrade authority. Recommended: move to a Safe multisig / Timelock after deploy; renounceOwnership() to freeze forever when done.",
