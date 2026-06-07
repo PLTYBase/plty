@@ -4,16 +4,16 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kamohashi ($PLTY) — Platypus on Base</title>
-<meta name="description" content="The world's weirdest mammal, now the world's weirdest coin. Egg-laying, venomous, bridge-loving platypus. A meme coin on Base: $PLTY." />
+<meta name="description" content="The world's weirdest mammal, now the world's weirdest coin. A meme coin on Base: $PLTY. Verified contract, 2-of-3 multisig, 100% open source." />
 <!-- OGP (share cards on socials — key to gathering people) -->
 <meta property="og:title" content="Kamohashi ($PLTY)" />
-<meta property="og:description" content="The world's weirdest mammal, now the world's weirdest coin. A meme on Base: $PLTY." />
+<meta property="og:description" content="The world's weirdest mammal, now the world's weirdest coin. A meme on Base — verified, multisig-owned, open source." />
 <meta property="og:image" content="https://plty.info/logo.png" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@PLTYBase" />
 <style>
-  :root { --bg:#0b1020; --card:#141b33; --accent:#ff9f43; --accent2:#2ec4b6; --text:#eef2ff; --muted:#9aa6c4; }
+  :root { --bg:#0b1020; --card:#141b33; --accent:#ff9f43; --accent2:#2ec4b6; --green:#3ddc84; --text:#eef2ff; --muted:#9aa6c4; }
   * { box-sizing:border-box; }
   body { margin:0; font-family:-apple-system,"Segoe UI",sans-serif; background:radial-gradient(1200px 600px at 50% -10%,#1b264f,var(--bg)); color:var(--text); }
   .wrap { max-width:880px; margin:0 auto; padding:64px 20px 96px; text-align:center; }
@@ -23,17 +23,32 @@
   .sub { color:var(--accent2); font-size:clamp(18px,4vw,26px); margin:0 0 8px; }
   .logo { width:200px; height:200px; object-fit:contain; margin:8px auto 4px; display:block; border-radius:28px; filter:drop-shadow(0 12px 30px rgba(0,0,0,.5)); }
   .tagline { color:var(--muted); font-size:clamp(16px,3.4vw,20px); max-width:620px; margin:14px auto 30px; line-height:1.7; }
-  .cta { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:40px; }
+  .cta { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:14px; }
   .btn { text-decoration:none; padding:14px 24px; border-radius:14px; font-weight:700; font-size:16px; transition:transform .1s ease; }
   .btn:active { transform:scale(.97); }
   .btn-primary { background:var(--accent); color:#1a1205; }
   .btn-ghost { background:var(--card); color:var(--text); border:1px solid #33406b; }
+  .trustline { color:var(--muted); font-size:13px; margin-bottom:40px; }
+  .trustline b { color:var(--green); }
   .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:24px; text-align:left; }
   .card { background:var(--card); border:1px solid #26305a; border-radius:18px; padding:22px; }
   .card h3 { margin:0 0 8px; font-size:17px; }
   .card p { margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
-  .ca { margin-top:34px; font-family:ui-monospace,Menlo,monospace; font-size:13px; color:var(--muted); word-break:break-all; background:#0e1430; border:1px dashed #33406b; border-radius:12px; padding:14px; }
-  footer { margin-top:48px; color:#647099; font-size:13px; }
+  /* Verify section */
+  .verify { margin-top:48px; text-align:left; background:#0e1430; border:1px solid #26305a; border-radius:20px; padding:26px 24px; }
+  .verify h2 { margin:0 0 4px; font-size:22px; }
+  .verify .lead { margin:0 0 18px; color:var(--muted); font-size:14px; }
+  .row { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:13px 0; border-top:1px solid #1e294d; }
+  .row:first-of-type { border-top:none; }
+  .row .k { font-weight:700; font-size:14px; min-width:120px; }
+  .row .v { color:var(--muted); font-size:13px; font-family:ui-monospace,Menlo,monospace; word-break:break-all; flex:1; }
+  .row .v .ok { color:var(--green); font-family:inherit; }
+  .row a.verify-link { white-space:nowrap; text-decoration:none; color:#0b1020; background:var(--accent2); padding:7px 12px; border-radius:9px; font-size:12px; font-weight:700; }
+  .tokenomics { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
+  .stat { flex:1; min-width:150px; background:var(--card); border:1px solid #26305a; border-radius:14px; padding:14px; text-align:center; }
+  .stat b { display:block; font-size:18px; }
+  .stat span { color:var(--muted); font-size:12px; }
+  footer { margin-top:48px; color:#647099; font-size:13px; line-height:1.7; }
 </style>
 </head>
 <body>
@@ -46,22 +61,54 @@
 
     <div class="cta">
       <a class="btn btn-primary" href="https://aerodrome.finance/swap?from=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913&to=0xDe129391E97F34609bd1AD414FC5D40d5a7Fb50e" target="_blank" rel="noopener" id="buy">Buy on Aerodrome</a>
+      <a class="btn btn-ghost" href="https://dexscreener.com/base/0xb0c2495ed6f792c9d22165796c36e5868df0cc63" target="_blank" rel="noopener" id="chart">Chart</a>
       <a class="btn btn-ghost" href="https://x.com/PLTYBase" target="_blank" rel="noopener">X (Twitter)</a>
-      <a class="btn btn-ghost" href="https://t.me/REPLACE" target="_blank" rel="noopener">Telegram</a>
-      <a class="btn btn-ghost" href="https://dexscreener.com/base/0xDe129391E97F34609bd1AD414FC5D40d5a7Fb50e" target="_blank" rel="noopener" id="chart">Chart</a>
+      <a class="btn btn-ghost" href="https://github.com/PLTYBase/plty" target="_blank" rel="noopener">GitHub</a>
     </div>
+    <p class="trustline">✅ Contract verified &nbsp;·&nbsp; ✅ Owned by a <b>2-of-3 multisig</b> &nbsp;·&nbsp; ✅ <b>100% open source</b></p>
 
     <div class="grid">
-      <div class="card"><h3>🥚 Open &amp; honest</h3><p>Upgradeable + mintable by design, with ownership set to move to a multisig/timelock — and renounceable to freeze forever when the time comes.</p></div>
-      <div class="card"><h3>🌉 Base native</h3><p>Low fees, fast. Coinbase ecosystem. Platypus = Bridge = Base — the pun is intentional.</p></div>
-      <div class="card"><h3>🔧 A brand you can grow</h3><p>Logo, copy and socials stay editable. The full source lives on GitHub — open and transparent.</p></div>
+      <div class="card"><h3>🔐 No solo control</h3><p>Admin keys live in a 2-of-3 Safe multisig. No single person can mint, upgrade, or touch the contract alone — every change needs 2 of 3 signatures.</p></div>
+      <div class="card"><h3>🔍 Verified &amp; open</h3><p>The contract source is verified on Basescan and 100% public on GitHub. Read every line before you ape.</p></div>
+      <div class="card"><h3>🥚 Honest by design</h3><p>$PLTY is upgradeable + mintable — we chose flexibility. That power sits behind the multisig and can be renounced to freeze it forever. We say so openly.</p></div>
     </div>
 
-    <div class="ca">Contract: <a id="ca" href="https://basescan.org/address/0xDe129391E97F34609bd1AD414FC5D40d5a7Fb50e" target="_blank" rel="noopener" style="color:var(--accent2)">0xDe129391E97F34609bd1AD414FC5D40d5a7Fb50e</a></div>
+    <!-- Don't trust — verify -->
+    <div class="verify">
+      <h2>Don't trust — verify 🔍</h2>
+      <p class="lead">Everything below is public and on-chain. Click and check it yourself.</p>
+
+      <div class="row">
+        <span class="k">Token (PLTY)</span>
+        <span class="v">0xDe129391E97F34609bd1AD414FC5D40d5a7Fb50e &nbsp;<span class="ok">✓ verified</span></span>
+        <a class="verify-link" href="https://basescan.org/address/0xDe129391E97F34609bd1AD414FC5D40d5a7Fb50e#code" target="_blank" rel="noopener">Basescan ↗</a>
+      </div>
+      <div class="row">
+        <span class="k">Owner</span>
+        <span class="v">2-of-3 Safe multisig · 0x00441BE49ca8Cc23adb17081cdD3D9e330F63A6C</span>
+        <a class="verify-link" href="https://basescan.org/address/0x00441BE49ca8Cc23adb17081cdD3D9e330F63A6C" target="_blank" rel="noopener">Basescan ↗</a>
+      </div>
+      <div class="row">
+        <span class="k">Liquidity</span>
+        <span class="v">Aerodrome PLTY/USDC pool · LP held by the multisig</span>
+        <a class="verify-link" href="https://dexscreener.com/base/0xb0c2495ed6f792c9d22165796c36e5868df0cc63" target="_blank" rel="noopener">DEX Screener ↗</a>
+      </div>
+      <div class="row">
+        <span class="k">Source code</span>
+        <span class="v">100% open — contract, deploy, tests, this site</span>
+        <a class="verify-link" href="https://github.com/PLTYBase/plty" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+
+      <div class="tokenomics">
+        <div class="stat"><b>1,000,000,000</b><span>Total supply (fixed start)</span></div>
+        <div class="stat"><b>90%</b><span>In the liquidity pool</span></div>
+        <div class="stat"><b>10%</b><span>Reserve — held in the multisig</span></div>
+      </div>
+    </div>
 
     <footer>
       $PLTY is a meme coin — a community and a party, not an investment.<br/>
-      Never put in more than you can afford to lose. Not financial advice.
+      Never put in more than you can afford to lose. Not financial advice. 🦆
     </footer>
   </div>
 </body>
