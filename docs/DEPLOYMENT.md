@@ -32,9 +32,18 @@ Ownership moved from the deployer to a **2-of-3 Safe** on Base.
 
 Any mint / upgrade / setMetadataURI / renounce now requires 2-of-3 signatures via the Safe.
 
+## Liquidity pool (done 2026-06-07)
+
+- DEX: Aerodrome (volatile PLTY/USDC)
+- **Pool/pair address:** `0xb0c2495ed6f792c9d22165796c36e5868df0cc63`
+- Seeded: 900,000,000 PLTY + 300 USDC → initial price ~$0.00000033 (FDV ~$333)
+- LP tokens (~0.5196) held by deployer `0xc5D7…b368` — **to be locked/burned next**
+- 100,000,000 PLTY reserve held in the Safe `0x0044…3A6C`
+- DEX Screener: https://dexscreener.com/base/0xb0c2495ed6f792c9d22165796c36e5868df0cc63
+
 ## Next steps
 
-1. **Create liquidity pool** (Aerodrome, PLTY/USDC) → makes it tradeable + auto-indexes on DEX Screener. ← NEXT
+1. **Lock or burn the LP tokens** → proof liquidity can't be pulled (rug-proof). ← NEXT
 2. **Lock/burn LP tokens** → proof liquidity can't be pulled.
 3. Submit token info/logo to DEX Screener; apply to CoinGecko / CoinMarketCap.
 4. Community: Telegram, launch memes.
