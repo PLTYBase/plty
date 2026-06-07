@@ -1,0 +1,27 @@
+# Foundry
+out/
+cache/
+broadcast/
+# lib/ is managed as git submodules (forge install). Reproducible via --recurse-submodules.
+
+# secrets — never commit
+.env
+*.key
+keystore/
+
+# node
+node_modules/
+
+# misc
+*.log
+.DS_Store
+
+# Images: ignored by default so raw / AI-generated / stock art is never auto-published.
+# (AI images carry provenance metadata; stock photos carry IDs/EXIF.)
+# To add a FINAL, metadata-stripped logo on purpose:
+#   exiftool -all= web/logo.png && git add -f web/logo.png
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif

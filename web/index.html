@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kamohashi ($PLTY) — Platypus on Base</title>
+<meta name="description" content="The world's weirdest mammal, now the world's weirdest coin. Egg-laying, venomous, bridge-loving platypus. A meme coin on Base: $PLTY." />
+<!-- OGP (share cards on socials — key to gathering people) -->
+<meta property="og:title" content="Kamohashi ($PLTY)" />
+<meta property="og:description" content="The world's weirdest mammal, now the world's weirdest coin. A meme on Base: $PLTY." />
+<meta property="og:image" content="https://plty.info/logo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<style>
+  :root { --bg:#0b1020; --card:#141b33; --accent:#ff9f43; --accent2:#2ec4b6; --text:#eef2ff; --muted:#9aa6c4; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,"Segoe UI",sans-serif; background:radial-gradient(1200px 600px at 50% -10%,#1b264f,var(--bg)); color:var(--text); }
+  .wrap { max-width:880px; margin:0 auto; padding:64px 20px 96px; text-align:center; }
+  .badge { display:inline-block; padding:6px 14px; border:1px solid #33406b; border-radius:999px; color:var(--muted); font-size:13px; letter-spacing:.04em; }
+  h1 { font-size:clamp(40px,9vw,84px); margin:18px 0 6px; letter-spacing:-.02em; }
+  h1 .tick { color:var(--accent); }
+  .sub { color:var(--accent2); font-size:clamp(18px,4vw,26px); margin:0 0 8px; }
+  .logo { font-size:150px; line-height:1; margin:8px auto 4px; filter:drop-shadow(0 12px 30px rgba(0,0,0,.5)); }
+  .tagline { color:var(--muted); font-size:clamp(16px,3.4vw,20px); max-width:620px; margin:14px auto 30px; line-height:1.7; }
+  .cta { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:40px; }
+  .btn { text-decoration:none; padding:14px 24px; border-radius:14px; font-weight:700; font-size:16px; transition:transform .1s ease; }
+  .btn:active { transform:scale(.97); }
+  .btn-primary { background:var(--accent); color:#1a1205; }
+  .btn-ghost { background:var(--card); color:var(--text); border:1px solid #33406b; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:24px; text-align:left; }
+  .card { background:var(--card); border:1px solid #26305a; border-radius:18px; padding:22px; }
+  .card h3 { margin:0 0 8px; font-size:17px; }
+  .card p { margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
+  .ca { margin-top:34px; font-family:ui-monospace,Menlo,monospace; font-size:13px; color:var(--muted); word-break:break-all; background:#0e1430; border:1px dashed #33406b; border-radius:12px; padding:14px; }
+  footer { margin-top:48px; color:#647099; font-size:13px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="badge">Built on Base · ERC-20</span>
+    <!-- Placeholder mascot. Drop in your own metadata-stripped logo.png and swap this for <img src="./logo.png" />. -->
+    <div class="logo" role="img" aria-label="Kamohashi platypus mascot">🦆</div>
+    <p class="sub">Kamohashi</p>
+    <h1>Platypus <span class="tick">$PLTY</span></h1>
+    <p class="tagline">The world's weirdest mammal — now the world's weirdest coin.<br/>Egg-laying. Venomous. Has a bill. Loves bridges.<br/>Native to Base.</p>
+
+    <div class="cta">
+      <a class="btn btn-primary" href="#" id="buy">Buy on Aerodrome</a>
+      <a class="btn btn-ghost" href="https://x.com/REPLACE" target="_blank" rel="noopener">X (Twitter)</a>
+      <a class="btn btn-ghost" href="https://t.me/REPLACE" target="_blank" rel="noopener">Telegram</a>
+      <a class="btn btn-ghost" href="#" id="chart">Chart</a>
+    </div>
+
+    <div class="grid">
+      <div class="card"><h3>🥚 Trustworthy by design</h3><p>No extra mint, no tax, no blacklist, no proxy. Ownership renounced once things settle — then it's immutable forever.</p></div>
+      <div class="card"><h3>🌉 Base native</h3><p>Low fees, fast. Coinbase ecosystem. Platypus = Bridge = Base — the pun is intentional.</p></div>
+      <div class="card"><h3>🔧 A brand you can grow</h3><p>Logo, copy and socials stay editable. The full source lives on GitHub — open and transparent.</p></div>
+    </div>
+
+    <div class="ca">Contract: <span id="ca">0x… (fill in after deploy)</span></div>
+
+    <footer>
+      $PLTY is a meme coin — a community and a party, not an investment.<br/>
+      Never put in more than you can afford to lose. Not financial advice.
+    </footer>
+  </div>
+</body>
+</html>

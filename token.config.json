@@ -1,0 +1,28 @@
+{
+  "_comment": "Single source of truth for deploy params. PLTY is a UUPS-upgradeable proxy: name/symbol/supply set here at deploy, but after launch the owner can mint more, upgrade the logic, and update metadata. Set 'owner' to a multisig (Safe) for trust if possible.",
+
+  "name": "Kamohashi",
+  "symbol": "PLTY",
+
+  "decimals": 18,
+  "totalSupply": 1000000000,
+
+  "initialMetadataURI": "ipfs://REPLACE_AFTER_IPFS_UPLOAD",
+  "owner": "0xREPLACE_WITH_YOUR_DEPLOYER_ADDRESS",
+
+  "upgradeable": true,
+  "ownerNotes": "owner = mint authority + upgrade authority. Recommended: move to a Safe multisig / Timelock after deploy; renounceOwnership() to freeze forever when done.",
+
+  "networks": {
+    "baseMainnet": { "rpc": "https://mainnet.base.org", "chainId": 8453 },
+    "baseSepolia": { "rpc": "https://sepolia.base.org", "chainId": 84532 }
+  },
+
+  "launch": {
+    "dex": "Aerodrome (or Uniswap v3 on Base)",
+    "pairWith": "USDC",
+    "plannedLiquidityUSD": 280,
+    "devBuyUSD": 0,
+    "moveOwnershipToMultisig": true
+  }
+}
