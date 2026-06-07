@@ -11,6 +11,7 @@
 <meta property="og:image" content="https://plty.info/logo.png" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@PLTYBase" />
 <style>
   :root { --bg:#0b1020; --card:#141b33; --accent:#ff9f43; --accent2:#2ec4b6; --text:#eef2ff; --muted:#9aa6c4; }
   * { box-sizing:border-box; }
@@ -20,7 +21,7 @@
   h1 { font-size:clamp(40px,9vw,84px); margin:18px 0 6px; letter-spacing:-.02em; }
   h1 .tick { color:var(--accent); }
   .sub { color:var(--accent2); font-size:clamp(18px,4vw,26px); margin:0 0 8px; }
-  .logo { font-size:150px; line-height:1; margin:8px auto 4px; filter:drop-shadow(0 12px 30px rgba(0,0,0,.5)); }
+  .logo { width:200px; height:200px; object-fit:contain; margin:8px auto 4px; display:block; border-radius:28px; filter:drop-shadow(0 12px 30px rgba(0,0,0,.5)); }
   .tagline { color:var(--muted); font-size:clamp(16px,3.4vw,20px); max-width:620px; margin:14px auto 30px; line-height:1.7; }
   .cta { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:40px; }
   .btn { text-decoration:none; padding:14px 24px; border-radius:14px; font-weight:700; font-size:16px; transition:transform .1s ease; }
@@ -38,21 +39,20 @@
 <body>
   <div class="wrap">
     <span class="badge">Built on Base · ERC-20</span>
-    <!-- Placeholder mascot. Drop in your own metadata-stripped logo.png and swap this for <img src="./logo.png" />. -->
-    <div class="logo" role="img" aria-label="Kamohashi platypus mascot">🦆</div>
+    <img class="logo" src="./logo.png" alt="Kamohashi platypus mascot" />
     <p class="sub">Kamohashi</p>
     <h1>Platypus <span class="tick">$PLTY</span></h1>
     <p class="tagline">The world's weirdest mammal — now the world's weirdest coin.<br/>Egg-laying. Venomous. Has a bill. Loves bridges.<br/>Native to Base.</p>
 
     <div class="cta">
       <a class="btn btn-primary" href="#" id="buy">Buy on Aerodrome</a>
-      <a class="btn btn-ghost" href="https://x.com/REPLACE" target="_blank" rel="noopener">X (Twitter)</a>
+      <a class="btn btn-ghost" href="https://x.com/PLTYBase" target="_blank" rel="noopener">X (Twitter)</a>
       <a class="btn btn-ghost" href="https://t.me/REPLACE" target="_blank" rel="noopener">Telegram</a>
       <a class="btn btn-ghost" href="#" id="chart">Chart</a>
     </div>
 
     <div class="grid">
-      <div class="card"><h3>🥚 Trustworthy by design</h3><p>No extra mint, no tax, no blacklist, no proxy. Ownership renounced once things settle — then it's immutable forever.</p></div>
+      <div class="card"><h3>🥚 Open &amp; honest</h3><p>Upgradeable + mintable by design, with ownership set to move to a multisig/timelock — and renounceable to freeze forever when the time comes.</p></div>
       <div class="card"><h3>🌉 Base native</h3><p>Low fees, fast. Coinbase ecosystem. Platypus = Bridge = Base — the pun is intentional.</p></div>
       <div class="card"><h3>🔧 A brand you can grow</h3><p>Logo, copy and socials stay editable. The full source lives on GitHub — open and transparent.</p></div>
     </div>
