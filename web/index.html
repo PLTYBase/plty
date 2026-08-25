@@ -34,6 +34,13 @@
   .card { background:var(--card); border:1px solid #26305a; border-radius:18px; padding:22px; }
   .card h3 { margin:0 0 8px; font-size:17px; }
   .card p { margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
+  /* Sections */
+  .section { margin-top:56px; text-align:left; }
+  .section > h2 { font-size:26px; margin:0 0 6px; }
+  .section > .lead { margin:0 0 18px; color:var(--muted); font-size:15px; line-height:1.7; }
+  .prose { color:var(--muted); font-size:15px; line-height:1.85; }
+  .prose b, .prose strong { color:var(--text); }
+  .prose .hl { color:var(--accent); font-weight:700; }
   /* Verify section */
   .verify { margin-top:48px; text-align:left; background:#0e1430; border:1px solid #26305a; border-radius:20px; padding:26px 24px; }
   .verify h2 { margin:0 0 4px; font-size:22px; }
@@ -48,7 +55,24 @@
   .stat { flex:1; min-width:150px; background:var(--card); border:1px solid #26305a; border-radius:14px; padding:14px; text-align:center; }
   .stat b { display:block; font-size:18px; }
   .stat span { color:var(--muted); font-size:12px; }
+  /* How to buy */
+  .steps { counter-reset:step; list-style:none; margin:18px 0 0; padding:0; display:grid; gap:12px; }
+  .steps li { background:var(--card); border:1px solid #26305a; border-radius:16px; padding:18px 18px 18px 62px; position:relative; color:var(--muted); font-size:14px; line-height:1.65; }
+  .steps li b { color:var(--text); display:block; margin-bottom:2px; font-size:15px; }
+  .steps li::before { counter-increment:step; content:counter(step); position:absolute; left:16px; top:16px; width:30px; height:30px; border-radius:10px; background:var(--accent); color:#1a1205; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  .ca-box { margin-top:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; background:#0e1430; border:1px dashed #33406b; border-radius:14px; padding:12px 14px; }
+  .ca-box code { font-family:ui-monospace,Menlo,monospace; font-size:12.5px; color:var(--accent2); word-break:break-all; flex:1; text-align:left; }
+  .copy-btn { border:none; cursor:pointer; background:var(--accent); color:#1a1205; font-weight:800; font-size:12px; padding:8px 14px; border-radius:9px; }
+  /* FAQ */
+  .faq details { background:var(--card); border:1px solid #26305a; border-radius:14px; padding:0; margin-top:10px; overflow:hidden; }
+  .faq summary { cursor:pointer; list-style:none; padding:16px 18px; font-weight:700; font-size:15px; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::before { content:"🦆"; margin-right:10px; }
+  .faq details[open] summary { border-bottom:1px solid #1e294d; }
+  .faq .a { padding:14px 18px 18px; color:var(--muted); font-size:14px; line-height:1.75; text-align:left; }
+  .faq .a b { color:var(--text); }
   footer { margin-top:48px; color:#647099; font-size:13px; line-height:1.7; }
+  footer a { color:#8fa0c9; }
 </style>
 </head>
 <body>
@@ -71,6 +95,58 @@
       <div class="card"><h3>🔐 No solo control</h3><p>Admin keys live in a 2-of-3 Safe multisig. No single person can mint, upgrade, or touch the contract alone — every change needs 2 of 3 signatures.</p></div>
       <div class="card"><h3>🔍 Verified &amp; open</h3><p>The contract source is verified on Basescan and 100% public on GitHub. Read every line before you ape.</p></div>
       <div class="card"><h3>🥚 Honest by design</h3><p>$PLTY is upgradeable + mintable — we chose flexibility. That power sits behind the multisig and can be renounced to freeze it forever. We say so openly.</p></div>
+    </div>
+
+    <!-- The story -->
+    <div class="section">
+      <h2>The story 🦆</h2>
+      <p class="prose">
+        In 1799, when the first platypus specimen reached Europe, scientists refused to believe it.
+        They inspected it for stitches, convinced someone had sewn a duck's bill onto a beaver as a prank.
+        <b>The platypus was literally the first animal in history to be accused of being fake.</b>
+        It wasn't. It was just built different: a mammal that lays eggs, produces venom,
+        sweats milk, has no stomach, senses electricity with its bill, and glows blue-green under UV light.
+        Nature shipped it anyway — no roadmap, no whitepaper, no permission.
+      </p>
+      <p class="prose" style="margin-top:12px;">
+        <span class="hl">Kamohashi</span> (カモノハシ) is Japanese for "duck-bill" — the platypus.
+        We took the most gloriously improbable animal on Earth and gave it the coin it deserves,
+        on the chain it belongs on: <b>Base</b>. (The platypus loves bridges. Base is a bridge. It was meant to be.)
+        No promises of riches. No fake utility. Just the world's weirdest mammal,
+        launched the most transparent way we knew how.
+      </p>
+    </div>
+
+    <!-- Platypus facts -->
+    <div class="section">
+      <h2>Certified weird facts</h2>
+      <p class="lead">Every one of these is real. The coin is the least weird thing on this page.</p>
+      <div class="grid">
+        <div class="card"><h3>🥚 Eggs + milk</h3><p>One of only five mammals on Earth that lay eggs — then it feeds its babies milk it sweats through its skin. No nipples. Nature improvised.</p></div>
+        <div class="card"><h3>☠️ Actually venomous</h3><p>Males carry venomous spurs on their hind legs that can drop a dog. Cute, cuddly-looking, and armed. Do not FUD the platypus.</p></div>
+        <div class="card"><h3>⚡ Electroreception</h3><p>Underwater it closes its eyes, ears and nose — and hunts by sensing electric fields with 40,000 sensors in its bill. It literally feels the current.</p></div>
+        <div class="card"><h3>✨ Glows under UV</h3><p>Platypus fur is biofluorescent — it glows blue-green under ultraviolet light. Scientists still aren't sure why. We assume it's for the vibes.</p></div>
+        <div class="card"><h3>🍽️ No stomach</h3><p>Food goes straight from gullet to gut. No stomach acid, no stomach at all. Every degen's portfolio can relate.</p></div>
+        <div class="card"><h3>🐣 Puggles</h3><p>Baby platypuses are called <b>puggles</b>. A group of platypuses is a <b>paddle</b>. Holders of $PLTY are, therefore, the paddle.</p></div>
+      </div>
+    </div>
+
+    <!-- How to buy -->
+    <div class="section" id="how-to-buy">
+      <h2>How to join the pond</h2>
+      <p class="lead">Three steps, a few minutes, tiny Base fees. Bring only what you'd happily spend on a party.</p>
+      <ol class="steps">
+        <li><b>Get a wallet on Base</b>Coinbase Wallet, MetaMask, Rabby — any EVM wallet works. Add the Base network (it's built in on most wallets) and fund it with a little ETH on Base for gas (cents, not dollars).</li>
+        <li><b>Get USDC on Base</b>Buy or bridge USDC to Base — directly from Coinbase, or via the official bridge at bridge.base.org. Even $1 works. This is a micro-cap meme; size accordingly.</li>
+        <li><b>Swap USDC → $PLTY on Aerodrome</b>Open the swap link below, paste the contract address if it doesn't autofill, set a little slippage (1–3%), and welcome to the paddle. 🦆</li>
+      </ol>
+      <div class="ca-box">
+        <code id="ca">0xDe129391E97F34609bd1AD414FC5D40d5a7Fb50e</code>
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('0xDe129391E97F34609bd1AD414FC5D40d5a7Fb50e').then(()=>{this.textContent='Copied! 🦆';setTimeout(()=>this.textContent='Copy CA',1500)})">Copy CA</button>
+      </div>
+      <div class="cta" style="margin-top:16px; justify-content:flex-start;">
+        <a class="btn btn-primary" href="https://aerodrome.finance/swap?from=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913&to=0xDe129391E97F34609bd1AD414FC5D40d5a7Fb50e" target="_blank" rel="noopener">Swap on Aerodrome</a>
+      </div>
     </div>
 
     <!-- Don't trust — verify -->
@@ -106,9 +182,58 @@
       </div>
     </div>
 
+    <!-- FAQ -->
+    <div class="section faq">
+      <h2>FAQ — honest answers only</h2>
+      <p class="lead">The platypus was accused of being fake once. We're not repeating history.</p>
+
+      <details>
+        <summary>Is $PLTY an investment?</summary>
+        <div class="a"><b>No.</b> $PLTY is a meme coin — a community, a joke, a party about the world's weirdest animal. It has no revenue, no product, and no promise of going up. Buy it the way you'd buy a funny t-shirt: because it makes you smile, with money you can fully afford to lose.</div>
+      </details>
+      <details>
+        <summary>Can the team rug?</summary>
+        <div class="a">The things that make rugs possible are locked behind a <b>2-of-3 Safe multisig</b>: contract ownership, upgrade rights, and the LP tokens. No single person — including the founder — can move liquidity, mint, or upgrade alone. Honest caveat: the LP is <b>held by the multisig, not burned</b>, so "2 of 3 signers" is the trust boundary. Everything is on-chain, so you can watch it live.</div>
+      </details>
+      <details>
+        <summary>Why is the contract upgradeable and mintable?</summary>
+        <div class="a">We chose flexibility over theater, and we say it out loud instead of hiding it. Both powers sit behind the multisig and every use would be public on-chain. If the community prefers it frozen, ownership can be <b>renounced</b> — permanently disabling upgrades and minting. Until then: verify, don't trust.</div>
+      </details>
+      <details>
+        <summary>Who holds the supply?</summary>
+        <div class="a"><b>90%</b> sits in the Aerodrome liquidity pool. <b>10%</b> is a reserve held by the multisig for community stuff (contests, liquidity top-ups) — every movement is publicly visible. No hidden team wallets, no presale, no insiders. Check the holder list on Basescan any time.</div>
+      </details>
+      <details>
+        <summary>Why Base?</summary>
+        <div class="a">Fees are cents, the chain is fast, the culture is fun, and it's where a new generation of on-chain weirdos lives. Also: the platypus is famous for loving bridges, and Base is literally a bridge to Ethereum. The lore wrote itself.</div>
+      </details>
+      <details>
+        <summary>What's the roadmap?</summary>
+        <div class="a">There isn't one — on purpose. No fake milestones, no "CEX listing soon", no promises we can't keep. The plan is simple: keep being the weirdest, most transparent little coin on Base, make good memes, and grow the paddle one weirdo at a time. 🦆</div>
+      </details>
+      <details>
+        <summary>Who is behind this?</summary>
+        <div class="a">A small independent team that thinks the platypus deserved a coin done properly. We stay pseudonymous — like most of crypto — which is exactly why everything here is designed so you <b>don't have to trust us</b>: verified source, multisig custody, public wallets, open repo. Judge the setup, not the names.</div>
+      </details>
+    </div>
+
+    <!-- Links -->
+    <div class="section">
+      <h2>Everything $PLTY</h2>
+      <div class="cta" style="justify-content:flex-start; margin-top:14px;">
+        <a class="btn btn-ghost" href="https://x.com/PLTYBase" target="_blank" rel="noopener">🐦 X — @PLTYBase</a>
+        <a class="btn btn-ghost" href="https://medium.com/@sns_63473/kamohashi-plty-the-worlds-weirdest-mammal-is-now-a-fully-transparent-meme-coin-on-base-40fa3d2dcb35" target="_blank" rel="noopener">📰 Medium — launch article</a>
+        <a class="btn btn-ghost" href="https://www.geckoterminal.com/base/pools/0xb0c2495ed6f792c9d22165796c36e5868df0cc63" target="_blank" rel="noopener">🦎 GeckoTerminal</a>
+        <a class="btn btn-ghost" href="https://dexscreener.com/base/0xb0c2495ed6f792c9d22165796c36e5868df0cc63" target="_blank" rel="noopener">📈 DEX Screener</a>
+        <a class="btn btn-ghost" href="https://basescan.org/address/0xDe129391E97F34609bd1AD414FC5D40d5a7Fb50e#code" target="_blank" rel="noopener">🔍 Basescan</a>
+        <a class="btn btn-ghost" href="https://github.com/PLTYBase/plty" target="_blank" rel="noopener">🐙 GitHub</a>
+      </div>
+    </div>
+
     <footer>
       $PLTY is a meme coin — a community and a party, not an investment.<br/>
-      Never put in more than you can afford to lose. Not financial advice. 🦆
+      Never put in more than you can afford to lose. Not financial advice. 🦆<br/>
+      <span style="opacity:.7">Stay safe: we will never DM you first, and we will never ask for your keys or seed phrase.</span>
     </footer>
   </div>
 </body>
